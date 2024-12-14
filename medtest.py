@@ -1,49 +1,87 @@
-def calcular_pontuacao():
-    print("Critérios Centor e McIsaac")
-    print("Responda às perguntas abaixo:")
+import tkinter as tk
 
-    febre = input("O paciente tem febre > 38°C? (s/n): ").strip().lower()
-    tosse = input("O paciente tem ausência de tosse? (s/n): ").strip().lower()
-    adenopatia = input("O paciente tem adenopatia cervical anterior? (s/n): ").strip().lower()
-    exsudato = input("O paciente tem exsudato ou edema amigdaliano? (s/n): ").strip().lower()
-
+def calcular_pontuacao(febre, tosse, adenopatia, exsudato, idade):
     pontos = 0
-    pontos += 1 if febre == "s" else 0
-    pontos += 1 if tosse == "s" else 0
-    pontos += 1 if adenopatia == "s" else 0
-    pontos += 1 if exsudato == "s" else 0
+    pontos += 1 if febre == "sim" else 0
+    pontos += 1 if tosse == "sim" else 0
+    pontos += 1 if adenopatia == "sim" else 0
+    pontos += 1 if exsudato == "sim" else 0
 
-    idade = int(input("Informe a idade do paciente: "))
     if 3 <= idade <= 14:
         pontos += 1
     elif idade >= 45:
         pontos -= 1
 
-    print(f"\nPontuação total: {pontos}")
+    return pontos
 
+def determinar_probabilidade(pontos):
     if pontos <= 0:
-        probabilidade = "1-2,5%"
+        return "1-2,5%"
     elif pontos == 1:
-        probabilidade = "5-10%"
+        return "5-10%"
     elif pontos == 2:
-        probabilidade = "11-17%"
+        return "11-17%"
     elif pontos == 3:
-        probabilidade = "28-35%"
+        return "28-35%"
     else:
-        probabilidade = "51-53%"
+        return "51-53%"
 
-    print(f"Probabilidade de faringite por Streptococcus do grupo A: {probabilidade}")
+def processar_dados():
+    try:
+        idade = int(entry_idade.get())
+        if idade < 0:
+            raise ValueError("Idade inválida.")
+    except ValueError:
+        resultado_text.delete("1.0", tk.END)
+        resultado_text.insert(tk.END, "Erro: Por favor, insira uma idade válida.")
+        return
 
-while True:
-    print("\nMenu:")
-    print("1 - Registrar um novo paciente")
-    print("2 - Sair")
-    opcao = input("Escolha uma opção: ")
+    pontos = calcular_pontuacao(febre.get(), tosse.get(), adenopatia.get(), exsudato.get(), idade)
+    probabilidade = determinar_probabilidade(pontos)
 
-    if opcao == "1":
-        calcular_pontuacao()
-    elif opcao == "2":
-        print("Encerrando o programa.")
-        break
-    else:
-        print("Opção inválida. Tente novamente.")
+    resultado_text.delete("1.0", tk.END)
+    resultado_text.insert(tk.END, f"A probabilidade do paciente estar com faringite por Streptococcus é: {probabilidade}")
+
+
+root = tk.Tk()
+root.title("MedTest - By: Caio e Yure")
+root.geometry("420x350")
+root.iconbitmap(r"C:\CAMINHO\LOCAL\DO\SEU\DISCO\COM\O\ICON\ic2.ico")
+root.resizable(False, False)
+
+frame_inputs = tk.Frame(root, padx=20, pady=20)
+frame_inputs.pack(fill="both", expand=True)
+
+
+febre = tk.StringVar(value="não")
+tosse = tk.StringVar(value="não")
+adenopatia = tk.StringVar(value="não")
+exsudato = tk.StringVar(value="não")
+
+
+tk.Label(frame_inputs, text="O paciente tem febre > 38°C?").grid(row=0, column=0, sticky="w", pady=5)
+tk.Radiobutton(frame_inputs, text="Sim", variable=febre, value="sim").grid(row=0, column=1, sticky="w")
+tk.Radiobutton(frame_inputs, text="Não", variable=febre, value="não").grid(row=0, column=2, sticky="w")
+
+tk.Label(frame_inputs, text="O paciente tem ausência de tosse?").grid(row=1, column=0, sticky="w", pady=5)
+tk.Radiobutton(frame_inputs, text="Sim", variable=tosse, value="sim").grid(row=1, column=1, sticky="w")
+tk.Radiobutton(frame_inputs, text="Não", variable=tosse, value="não").grid(row=1, column=2, sticky="w")
+
+tk.Label(frame_inputs, text="O paciente tem adenopatia cervical anterior?").grid(row=2, column=0, sticky="w", pady=5)
+tk.Radiobutton(frame_inputs, text="Sim", variable=adenopatia, value="sim").grid(row=2, column=1, sticky="w")
+tk.Radiobutton(frame_inputs, text="Não", variable=adenopatia, value="não").grid(row=2, column=2, sticky="w")
+
+tk.Label(frame_inputs, text="O paciente tem exsudato ou edema amigdaliano?").grid(row=3, column=0, sticky="w", pady=5)
+tk.Radiobutton(frame_inputs, text="Sim", variable=exsudato, value="sim").grid(row=3, column=1, sticky="w")
+tk.Radiobutton(frame_inputs, text="Não", variable=exsudato, value="não").grid(row=3, column=2, sticky="w")
+
+tk.Label(frame_inputs, text="Informe a idade do paciente:").grid(row=4, column=0, sticky="w", pady=5)
+entry_idade = tk.Entry(frame_inputs, width=6)
+entry_idade.grid(row=4, column=1)
+
+tk.Button(frame_inputs, text="Calcular", command=processar_dados).grid(row=5, column=0, columnspan=3, pady=10)
+
+resultado_text = tk.Text(root, height=5, width=50, wrap="word")
+resultado_text.pack(padx=20, pady=(10, 20))
+
+root.mainloop()
