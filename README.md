@@ -8,4 +8,4 @@ A aplicação permite calcular a probabilidade de um paciente estar com faringit
 
 
 
-![medtest(https://github.com/user-attachments/assets/1296a52f-8122-4443-8bbd-01ee953a7c06)
+![medtest](https://github.com/user-attachments/assets/1296a52f-8122-4443-8bbd-01ee953a7c06)
