@@ -45,7 +45,7 @@ def processar_dados():
 
 root = tk.Tk()
 root.title("MedTest - By: Caio e Yure")
-root.geometry("420x350")
+root.geometry("520x350")
 root.iconbitmap(r"C:\CAMINHO\LOCAL\DO\SEU\DISCO\COM\O\ICON\ic2.ico")
 root.resizable(False, False)
 
