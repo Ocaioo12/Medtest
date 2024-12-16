@@ -1,6 +1,6 @@
 # **MedTest**
 
-Este projeto, desenvolvido para a disciplina de Introdução à Programação (Python) , tem como objetivo criar uma interface executável para profissionais de saúde. A ferramenta utiliza os Critérios de Centor e McIsaac para auxiliar o médico na estimativa da probabilidade de um paciente estar com faringite causada por Streptococcus . Por meio da lógica baseada em medicina baseada em evidências, a interface oferece uma solução prática e acessível para a tomada de decisão clínica.
+Este projeto, desenvolvido para a disciplina de Introdução à Programação (Python) , tem como objetivo criar uma interface executável para profissionais de saúde. A ferramenta utiliza os Critérios de Centor e McIsaac para auxiliar o médico na estimativa da probabilidade de um paciente estar com faringite causada por Streptococcus . Por meio da lógica em medicina baseada em evidências, a interface oferece uma solução prática e acessível para a tomada de decisão clínica.
 
 # **O que é  faringite por streptococcus?**
 
