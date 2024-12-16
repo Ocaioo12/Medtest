@@ -52,7 +52,6 @@ root.resizable(False, False)
 frame_inputs = tk.Frame(root, padx=20, pady=20)
 frame_inputs.pack(fill="both", expand=True)
 
-
 febre = tk.StringVar(value="não")
 tosse = tk.StringVar(value="não")
 adenopatia = tk.StringVar(value="não")
@@ -62,23 +61,26 @@ exsudato = tk.StringVar(value="não")
 tk.Label(frame_inputs, text="O paciente tem febre > 38°C?").grid(row=0, column=0, sticky="w", pady=5)
 tk.Radiobutton(frame_inputs, text="Sim", variable=febre, value="sim").grid(row=0, column=1, sticky="w")
 tk.Radiobutton(frame_inputs, text="Não", variable=febre, value="não").grid(row=0, column=2, sticky="w")
+
 tk.Label(frame_inputs, text="O paciente tem ausência de tosse?").grid(row=1, column=0, sticky="w", pady=5)
 tk.Radiobutton(frame_inputs, text="Sim", variable=tosse, value="sim").grid(row=1, column=1, sticky="w")
 tk.Radiobutton(frame_inputs, text="Não", variable=tosse, value="não").grid(row=1, column=2, sticky="w")
+
 tk.Label(frame_inputs, text="O paciente tem adenopatia cervical anterior?").grid(row=2, column=0, sticky="w", pady=5)
 tk.Radiobutton(frame_inputs, text="Sim", variable=adenopatia, value="sim").grid(row=2, column=1, sticky="w")
 tk.Radiobutton(frame_inputs, text="Não", variable=adenopatia, value="não").grid(row=2, column=2, sticky="w")
+
 tk.Label(frame_inputs, text="O paciente tem exsudato ou edema amigdaliano?").grid(row=3, column=0, sticky="w", pady=5)
 tk.Radiobutton(frame_inputs, text="Sim", variable=exsudato, value="sim").grid(row=3, column=1, sticky="w")
 tk.Radiobutton(frame_inputs, text="Não", variable=exsudato, value="não").grid(row=3, column=2, sticky="w")
-tk.Label(frame_inputs, text="Informe a idade do paciente:").grid(row=4, column=0, sticky="w", pady=5)
 
+tk.Label(frame_inputs, text="Informe a idade do paciente:").grid(row=4, column=0, sticky="w", pady=5)
 entry_idade = tk.Entry(frame_inputs, width=6)
 entry_idade.grid(row=4, column=1)
 
 tk.Button(frame_inputs, text="Calcular", command=processar_dados).grid(row=5, column=0, columnspan=3, pady=10)
-
 resultado_text = tk.Text(root, height=5, width=50, wrap="word")
 resultado_text.pack(padx=20, pady=(10, 20))
+
 
 root.mainloop()
