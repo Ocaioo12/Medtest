@@ -46,7 +46,7 @@ def processar_dados():
 root = tk.Tk()
 root.title("MedTest - By: Caio e Yure")
 root.geometry("520x350")
-root.iconbitmap(r"C:\CAMINHO\LOCAL\DO\SEU\DISCO\COM\O\ICON\ic2.ico")
+root.iconbitmap("ic2.ico") #Caso o arquivivo do ícone esteja em outra pasta pode usar assim também: r"Caminho/do/local/da/Pasta/com/o/arquivo.ico"
 root.resizable(False, False)
 
 frame_inputs = tk.Frame(root, padx=20, pady=20)
