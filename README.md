@@ -7,4 +7,4 @@ Este é um projeto simples para discplina de Introdução à Programação (Pyth
 A aplicação permite calcular a probabilidade de um paciente estar com faringite por streptococcus com base em idade e alguns critérios.
 
 
-[Medtestgif](https://github.com/user-attachments/assets/72f38823-5aa5-4bbb-8a3d-8584d05252b1)
+
