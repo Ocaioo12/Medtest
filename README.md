@@ -4,7 +4,7 @@ Este projeto, desenvolvido para a disciplina de Introdução à Programação (P
 
 # **O que é  faringite por streptococcus?**
 
-A faringite por Streptococcus pyogenes é uma infecção bacteriana da garganta, também chamada de faringite estreptocócica. Ela causa inflamação e dor na faringe, frequentemente acompanhada por febre, dificuldade para engolir e linfonodos inchados em região cervical. Transmitida pelo contato com secreções respiratórias, é mais comum em crianças, mas pode afetar qualquer idade. O tratamento envolve antibióticos, para evitar complicações graves.
+A faringite por Streptococcus pyogenes é uma infecção bacteriana da garganta, também chamada de faringite estreptocócica. Apresenta sintomas como: inflamação e dor na faringe, frequentemente acompanhada por febre, dificuldade para engolir e linfonodos inchados em região cervical. Transmitida pelo contato com secreções respiratórias, é mais comum em crianças, mas pode afetar qualquer idade. O tratamento envolve antibióticos, para evitar complicações graves.
 
 # **Tabela que utilizamos no desenvolvimento:**
 ![tabela](https://github.com/user-attachments/assets/b7168092-f68d-43b4-8a95-d6ddc2fd43c5)
